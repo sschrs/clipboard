@@ -1,0 +1,22 @@
+{
+  "name": "clipboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sschrs/clipboard.git"
+  },
+  "author": "Süleyman Özarslan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sschrs/clipboard/issues"
+  },
+  "homepage": "https://github.com/sschrs/clipboard#readme",
+  "dependencies": {
+    "electron": "^20.1.4"
+  }
+}
