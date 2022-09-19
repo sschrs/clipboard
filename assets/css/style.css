@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(24, 22, 36);
+}
+
+.list-item{
+    background-color: rgb(37, 37, 63);
+    color:white;
+    border-bottom: 0.1px solid rgb(53, 53, 79);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+.settings-button{
+    font-size: 20px;
+    color: rgb(53,53,70);
+    transition: all 0.5s;
+}
+
+.settings-button:hover{
+    color: white
+}
+
+.text-area{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
+}
