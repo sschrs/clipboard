@@ -11,30 +11,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <title>Clipboard</title>
+    <title>Settings | Clipboard</title>
 </head>
 <body>
-    <div id="app-div" class="container pt-3">
-        <h1 class="display-5 text-white d-flex justify-content-between align-items-center">
-            <div>CLIPBOARD</div>
-            <div>
-                <a class="reset-button" href="#"><i class="fa-solid fa-broom"></i></a>
-                <a class="settings-button" href="#"><i class="fa fa-gear"></i></a>
+    <div class="container pt-2">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="auto-launch-text">Auto Lauch: </div>
+            <div class="form-check form-switch" style="font-size: 1.4em;">
+                <input class="form-check-input" type="checkbox" role="switch" id="auto-launch">
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-center">
+                <a href="#" id="github-button"><i class="fa-brands fa-github"></i></a>
             </div>
-        </h1>
-        <div id="no-items" class="text-muted">No Items on the Clipboard</div>
-        <ul style="border-radius: 0;" class="list-group" id="clipboard-list">
-            
-        </ul>
-        <div style="text-align: right;">
-            <small style="font-size: 0.5em;">by Süleyman Özarslan | @sschrs</small>
+            <div class="col-6 text-center">
+                <a href="#" id="quit-button"><i class="fa-solid fa-power-off"></i></a>
+            </div>
         </div>
     </div>
+
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/fontawesome.min.js"></script>
     <script src="../assets/js/jquery-3.6.1.min.js"></script>
-    <script src="../controllers/clipboardWindow.js"></script>
+    <script src="../controllers/settingsWindow.js"></script>
     <script>if (window.module) module = window.module;</script>
 </body>
 </html>

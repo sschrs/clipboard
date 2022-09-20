@@ -41,3 +41,23 @@ body{
     max-width: 350px;
     max-height: 50px;
 }
+
+.auto-launch-text{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+}
+
+#github-button{
+    font-size: 3em;
+    color: white;
+}
+
+#quit-button{
+    font-size: 3em;
+    color: white;
+}
+
+#quit-button:hover{
+    color:crimson;
+}

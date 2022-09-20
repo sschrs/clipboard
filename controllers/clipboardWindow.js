@@ -51,5 +51,9 @@ $(window).on('load',()=>{
         check()
     })
 
+    $('.settings-button').click(()=>{
+        ipcRenderer.send('settings')
+    })
+
 
 })

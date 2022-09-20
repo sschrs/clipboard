@@ -1,4 +1,4 @@
-const { app } = require('electron')
+const { app, ipcMain } = require('electron')
 const { watchClipboard } = require('./clipboard')
 const { clipboardWindowActions } = require('./windows')
 const { menubar } = require('menubar');
@@ -30,5 +30,9 @@ mb.on('ready', () => {
         app.dock.hide()
         watchClipboard(mb.window, 500);
         clipboardWindowActions()
+        
+        ipcMain.on('quit',()=>{
+            app.quit()
+        })
     })
   });
