@@ -1,9 +1,7 @@
 const { app, clipboard } = require('electron')
-const clipboardWatcher = require('electron-clipboard-watcher')
-const { configWatcher } = require('./watcher')
+const { watchClipboard } = require('./clipboard')
 const { clipboardWindow } = require('./windows')
 
 app.whenReady().then(()=>{
-    clipboardWatcher(configWatcher)
-    clipboardWindow()
+    watchClipboard(clipboardWindow(),500)
 })

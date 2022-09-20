@@ -20,9 +20,24 @@ body{
     color: white
 }
 
+.reset-button{
+    font-size: 20px;
+    color: rgb(53,53,70);
+    transition: all 0.5s;
+}
+
+.reset-button:hover{
+    color: white
+}
+
+#no-items{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .text-area{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 350px;
+    max-height: 50px;
 }
