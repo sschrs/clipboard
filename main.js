@@ -24,8 +24,6 @@ const mb = menubar({
 });
 
 mb.on('ready', () => {
-
-
     mb.showWindow()
     mb.on('after-create-window', ()=>{
         console.log(app.getAppPath() + '/assets/icons/clipboard.png',)
