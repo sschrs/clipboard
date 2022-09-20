@@ -1,4 +1,5 @@
 const { BrowserWindow, ipcMain } = require("electron")
+const { cleanClipboard, addClipboard } = require("./clipboard")
 
 const createWindow = (options,path)=>{
     let window = new BrowserWindow(options)
@@ -21,7 +22,11 @@ exports.clipboardWindow = ()=>{
     },"./views/clipboard.html")    
 
     ipcMain.on('clean',()=>{
-        
+        cleanClipboard()
+    })
+
+    ipcMain.on('copy',(err,data)=>{
+        addClipboard(data)
     })
 
     return window

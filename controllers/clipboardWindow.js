@@ -35,6 +35,11 @@ $(window).on('load',()=>{
         li.append(copyButton)
         clipboardList.prepend(li)
 
+
+        copyButton.addEventListener('click',function(){
+            ipcRenderer.send('copy',textArea.innerText)
+        })
+
         check()
     })
 
@@ -44,5 +49,6 @@ $(window).on('load',()=>{
         clipboardList.innerHTML = ''
         ipcRenderer.send('clean')
     })
+
 
 })
