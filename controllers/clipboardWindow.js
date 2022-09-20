@@ -48,6 +48,7 @@ $(window).on('load',()=>{
         let clipboardList = document.getElementById('clipboard-list')
         clipboardList.innerHTML = ''
         ipcRenderer.send('clean')
+        check()
     })
 
 
