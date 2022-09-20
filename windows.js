@@ -1,4 +1,4 @@
-const { BrowserWindow, ipcMain } = require("electron")
+const { BrowserWindow, ipcMain,shell } = require("electron")
 const { cleanClipboard, addClipboard } = require("./clipboard")
 
 const createWindow = (options,path)=>{
@@ -34,4 +34,8 @@ exports.settingsWindow = ()=>{
             enableRemoteModule: true
         }
     },"./views/settings.html")
+
+    ipcMain.on('github',()=>{
+        shell.openExternal("https://github.com/sschrs/clipboard")
+    })
 }

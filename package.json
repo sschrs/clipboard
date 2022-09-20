@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/sschrs/clipboard#readme",
   "dependencies": {
+    "auto-launch": "^5.0.5",
     "electron-clipboard-watcher": "^1.0.1",
-    "electron-store": "^8.1.0",
     "menubar": "^9.2.2"
   },
   "devDependencies": {

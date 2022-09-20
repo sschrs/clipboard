@@ -5,5 +5,8 @@ $(window).on('load',()=>{
         ipcRenderer.send('quit')
     })
 
+    $('#github-button').click(()=>{
+        ipcRenderer.send('github')
+    })
 
 })
