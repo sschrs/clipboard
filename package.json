@@ -1,7 +1,7 @@
 {
   "name": "clipboard",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple clipboard manager running on your manubar. It keeps your copy history and allows you to access them back.",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -10,14 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/sschrs/clipboard.git"
   },
-  "author": "Süleyman Özarslan",
-  "license": "ISC",
+  "author": "Süleyman Özarslan | @sschrs",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sschrs/clipboard/issues"
   },
   "homepage": "https://github.com/sschrs/clipboard#readme",
   "dependencies": {
-    "auto-launch": "^5.0.5",
     "electron-clipboard-watcher": "^1.0.1",
     "menubar": "^9.2.2"
   },

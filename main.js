@@ -5,6 +5,8 @@ const { menubar } = require('menubar');
 
 
 
+
+
 const mb = menubar({
     dir:  app.getAppPath(),
     index: 'file://' + app.getAppPath() + '/views/clipboard.html',
@@ -26,11 +28,10 @@ const mb = menubar({
 mb.on('ready', () => {
     mb.showWindow()
     mb.on('after-create-window', ()=>{
-        console.log(app.getAppPath() + '/assets/icons/clipboard.png',)
         app.dock.hide()
         watchClipboard(mb.window, 500);
-        clipboardWindowActions()
-        
+        clipboardWindowActions(app)
+
         ipcMain.on('quit',()=>{
             app.quit()
         })

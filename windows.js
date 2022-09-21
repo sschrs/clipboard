@@ -1,4 +1,4 @@
-const { BrowserWindow, ipcMain,shell } = require("electron")
+const { BrowserWindow, ipcMain, shell } = require("electron")
 const { cleanClipboard, addClipboard } = require("./clipboard")
 
 const createWindow = (options,path)=>{
@@ -7,7 +7,7 @@ const createWindow = (options,path)=>{
     return window
 }
 
-exports.clipboardWindowActions = ()=>{   
+exports.clipboardWindowActions = (app)=>{   
     ipcMain.on('clean',()=>{
         cleanClipboard()
     })
@@ -17,12 +17,12 @@ exports.clipboardWindowActions = ()=>{
     })
 
     ipcMain.on('settings',()=>{
-        this.settingsWindow()
+        this.settingsWindow(app)
     })
 }
 
-exports.settingsWindow = ()=>{
-    createWindow({
+exports.settingsWindow = (app)=>{
+    let window = createWindow({
         width : 200,
         height : 140,
         title : "clipboard",
@@ -35,7 +35,22 @@ exports.settingsWindow = ()=>{
         }
     },"./views/settings.html")
 
+    window.webContents.once('dom-ready',()=>{
+        window.webContents.send('isAutoLaunchEnabled', app.getLoginItemSettings().openAtLogin)
+    })
+
+    ipcMain.on('switchAutoLaunch',(err,data)=>{
+        
+        app.setLoginItemSettings({
+            openAtLogin: data
+        })
+    })
+
     ipcMain.on('github',()=>{
         shell.openExternal("https://github.com/sschrs/clipboard")
+    })
+
+    window.on('closed',()=>{
+        window = null;
     })
 }
